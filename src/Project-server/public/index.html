@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<title>Audio Player</title>
+	<link rel='stylesheet' href='/stylesheets/style.css'></link>
+</head>
+
+<body>
+	<h1>Midi Controller</h1>
+	
+	<div id='content'>
+		
+		<p id="titletext2"></p>
+		<form id='track-form' >
+			<input type="button" id="moveback" value="<<"/>
+			<input type="button" id="skipforw" value="<"/>
+			<input type="button" id="pause" value="||" />
+			<input type="button" id="skipback" value=">"/>
+			<input type="button" id="moveforw" value=">>"/>
+		</form>
+		
+		
+	</div>
+	
+	
+	
+	<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+	<script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+	<script src='javascripts/udp_ui.js' type='text/javascript'></script>
+</body>
+</html>

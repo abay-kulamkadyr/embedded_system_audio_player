@@ -1,0 +1,172 @@
+
+#content {
+	width: 1000px;
+	border: 4px rgb(201, 39, 144);
+	padding:0px 20px 20px 20px;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -520px;
+	border-style: dashed solid;
+	
+}
+
+body {background-color: rgb(80, 141, 255);}
+
+h1{
+	text-align:center;
+	margin-top:50px;
+	color:white;
+}
+
+#titletext {
+	font-weight:900;
+	font-size:150%;
+	position: fixed;
+    top: 50%;
+    left: 50%;
+	margin-top: 100px;
+    margin-left: 400px;
+	
+}
+
+#titletext2 {
+	font-weight:700;
+	font-size:120%;
+}
+
+
+
+#displaytrack {
+	height: 75px;
+	margin-right:5px;
+	padding-right:20px;
+	background-color: #eee;
+	overflow: auto;
+	margin-bottom: 1em;
+	border-radius:5px;
+	border:0.5px solid lightgrey;
+	
+}
+
+
+
+
+#skipforw {
+	width: 50px;
+	padding-left:5px;
+	padding-right:5px;
+	margin-right:80px;
+	color: white;
+	background-color:black;
+	height:100px;
+	width:100px;
+	border-radius:100px;
+	font-weight:bold;
+	font-size:50px;
+}
+
+#skipforw:hover {
+	background-color: lightgrey;
+	color:black;
+}
+#skipback {
+	padding-left:5px;
+	padding-right:5px;
+	margin-right:80px;
+	color: white;
+	background-color:black;
+	height:100px;
+	width:100px;
+	border-radius:50px;
+	font-weight:bold;
+	font-size:50px;
+}
+#skipback:hover {
+	background-color: lightgrey;
+	color:black;
+}
+#moveback {
+	padding-left:5px;
+	padding-right:5px;
+	margin-right:100px;
+	color: white;
+	background-color:black;
+	height:100px;
+	width:100px;
+	border-radius:50px;
+	font-weight:bold;
+	font-size:50px;
+}
+#moveback:hover {
+	background-color: lightgrey;
+	color:black;
+}
+#pause {
+	padding-left:5px;
+	padding-right:5px;
+	margin-right:100px;
+	color: white;
+	background-color:black;
+	height:100px;
+	width:100px;
+	border-radius:50px;
+	font-weight:bold;
+	font-size:50px;
+}
+#pause:hover {
+	background-color: lightgrey;
+	color:black;
+}
+#moveforw {
+	padding-left:5px;
+	padding-right:5px;
+	color: white;
+	margin-right:100px;
+	background-color:black;
+	height:100px;
+	width:100px;
+	border-radius:50px;
+	font-weight:bold;
+	font-size:50px;
+}
+#moveforw:hover {
+	background-color: lightgrey;
+	color:black;
+}
+
+#volumeUp{
+    padding-left:5px;
+    padding-right:5px;
+    color: white;
+    margin-right:100px;
+    background-color:black;
+    height:100px;
+    width:100px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:50px;
+}
+#volumeUp:hover {
+	background-color: lightgrey;
+	color:black;
+}
+#volumeDown{
+    padding-left:5px;
+    padding-right:5px;
+    color: white;
+    background-color:black;
+    height:100px;
+    width:100px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:50px;
+    
+
+}
+#volumeDown:hover {
+	background-color: lightgrey;
+	color:black;
+}
+
