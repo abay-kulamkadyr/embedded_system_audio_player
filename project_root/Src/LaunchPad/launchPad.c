@@ -1,11 +1,12 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "launchPad.h"
-#include "WaveAudioPlayer.h"
-#include "HardwareControlModule/neoTrellis.h"
-#include "Utils/sleepMilliseconds.h"
-#include "shutdown.h"
+#include "../../Include/LaunchPad/launchPad.h"
+#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
+#include "../../Include/HardwareControlModule/neoTrellis.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+#include "../../Include/Shutdown/shutdown.h"
+
 #define RED          (color)        {.red = 255,   .green = 0,     .blue = 0}
 #define NEON_YELLOW  (color)        {.red = 244,   .green = 231,   .blue = 34}
 #define NEON_RED     (color)        {.red = 210,   .green = 39,    .blue = 48}
@@ -30,7 +31,7 @@ static bool terminate_signal;
 #define BUTTONS_NUM             16
 #define MAX_PATH_SIZE           1024
 #define AUDIO_FILES_NUM         15
-#define MIXING_AUDIO_FILES_PATH "Sound_Effects_Wave_Files/"
+#define MIXING_AUDIO_FILES_PATH "../../Sound_Effects_Wave_Files/"
 #define AUDIO_0                 "128_BouncyDrums_02_726.wav"
 #define AUDIO_1                 "128_D#m_DreamySub_01_726.wav"
 #define AUDIO_2                 "128_D#m_DreamySynth_01_726.wav"
@@ -132,7 +133,6 @@ static void *mixingThread(void* arg)
 }
 void LaunchPad_Destroy(void)
 {
-
     terminate_signal = true;
     pthread_cancel(keypadListener_pid);
     pthread_join(keypadListener_pid, NULL);

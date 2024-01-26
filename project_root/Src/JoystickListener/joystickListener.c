@@ -5,12 +5,12 @@
 #include <stdlib.h>
 
 #include <unistd.h>
-#include "joystickListener.h"
-#include "HardwareControlModule/joystick.h"
-#include "WaveAudioPlayer.h"
-#include "Utils/sleepMilliseconds.h"
-#include "segDisplayDriver.h"
-#include "HardwareControlModule/segDisplay.h"
+#include "../../Include/JoystickListener/joystickListener.h"
+#include "../../Include/HardwareControlModule/joystick.h"
+#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+#include "../../Include/SegmentDisplayDriver/segDisplayDriver.h"
+#include "../../Include/HardwareControlModule/segDisplay.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -191,18 +191,17 @@ static void* JoystickListener_thread(void* arg)
                 sleep_ms(300);
                 pausefromUDP=0;
 	}
-	else if (skipaheadfromUDP==1){
+	else if (skipaheadfromUDP == 1){
 		WaveAudioPlayer_SkipToNextTrack();
 		skipaheadfromUDP=0;
 		sleep_ms(300);
 	}
-	else if (skipbackfromUDP==1){
+	else if (skipbackfromUDP == 1){
 		WaveAudioPlayer_ReturnToPreviousTrack();
 		skipbackfromUDP=0;
 		sleep_ms(300);
 	}
 		
-	
     }
     pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
     sleep_ms(1);

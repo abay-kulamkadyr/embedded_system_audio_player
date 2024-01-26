@@ -5,9 +5,9 @@
 #include <alsa/asoundlib.h>
 #include <limits.h>
 #include <alloca.h> // needed for mixer
-#include "Utils/sleepMilliseconds.h"
-#include "volumeChanger.h"
-#include "HardwareControlModule/potentiometer.h"
+#include "../../Include/VolumeChanger/volumeChanger.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+#include "../../Include/HardwareControlModule/potentiometer.h"
 
 //Prototypes:
 static void* VolumeChanger_ThreadFunc (void * attr);

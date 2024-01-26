@@ -1,15 +1,30 @@
 # Makefile for building embedded application.
-# by Brian Fraser
+# by Abay Kulamkadyr
 
 # Edit this file to compile extra C files into their own programs.
 TARGET= audio_project
 
 
-PROJECT_NAME=Project-server
-DEPLOY_PATH= $(HOME)/cmpt433/public/myApps/$(PROJECT_NAME)-copy
+PROJECT_NAME = Node_modules
+DEPLOY_PATH = $(HOME)/cmpt433/public/myApps/$(PROJECT_NAME)-copy
 
-SOURCES= main.c ./HardwareControlModule/accelerometer.c ./HardwareControlModule/potentiometer.c WaveAudioPlayer.c shutdown.c ./Utils/sleepMilliseconds.c dr_wav.h volumeChanger.c ./HardwareControlModule/joystick.c joystickListener.c accelerometerListener.c segDisplayDriver.c ./HardwareControlModule/segDisplay.c ./HardwareControlModule/neoTrellis.c ./HardwareControlModule/seeSaw.c launchPad.c
-
+#SOURCES= main.c ./HardwareControlModule/accelerometer.c ./HardwareControlModule/potentiometer.c WaveAudioPlayer.c shutdown.c ./Utils/sleepMilliseconds.c dr_wav.h volumeChanger.c ./HardwareControlModule/joystick.c joystickListener.c accelerometerListener.c segDisplayDriver.c ./HardwareControlModule/segDisplay.c ./HardwareControlModule/neoTrellis.c ./HardwareControlModule/seeSaw.c launchPad.c
+# Source files
+SOURCES = Src/main.c \
+          Src/AccelerometerListener/accelerometerListener.c \
+          Src/HardwareControl/accelerometer.c \
+          Src/HardwareControl/joystick.c \
+          Src/HardwareControl/neoTrellis.c \
+          Src/HardwareControl/potentiometer.c \
+          Src/HardwareControl/seeSaw.c \
+          Src/HardwareControl/segDisplay.c \
+          Src/JoystickListener/joystickListener.c \
+          Src/LaunchPad/launchPad.c \
+          Src/SegmentDisplayDriver/segDisplayDriver.c \
+          Src/Shutdown/shutdown.c \
+          Src/Utils/sleepMilliseconds.c \
+          Src/VolumeChanger/volumeChanger.c \
+          Src/WavAudioPlayer/WaveAudioPlayer.c
 
 PUBDIR = $(HOME)/cmpt433/public/myApps
 OUTDIR = $(PUBDIR)
@@ -54,7 +69,7 @@ deploy:
 	@echo ''
 	mkdir -p $(DEPLOY_PATH)
 	chmod a+rwx $(DEPLOY_PATH)
-	cp -r Project-server/* $(DEPLOY_PATH)
+	cp -r Node_modules/* $(DEPLOY_PATH)
 	@echo 'Do not edit any files in this folder; they are copied!' > $(DEPLOY_PATH)/DO_NOT_EDIT-FILES_COPIED.txt
 	@echo ''
 	@echo 'NOTE: On the host, in $(DEPLOY_PATH), it is best to run: npm install'
@@ -66,4 +81,4 @@ node_install:
 	@echo 'INSTALLING REQUIRED NODE PACKAGES'
 	@echo '(This may take some time)'
 	@echo ''
-	cd $(DEPLOY_PATH) && npm install
+	cd $(DEPLOY_PATH) && npm install 

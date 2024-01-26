@@ -10,8 +10,9 @@
 #include <linux/i2c.h>
 #include <linux/i2c-dev.h>
 
-#include "seeSaw.h"
-#include "../Utils/sleepMilliseconds.h"
+#include "../../Include/HardwareControlModule/seeSaw.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+
 int i2cBus_fd;
 #define CONFIG_PIN_COMMAND      "config-pin"
 #define I2C2_SCL_PIN            "P9_19"

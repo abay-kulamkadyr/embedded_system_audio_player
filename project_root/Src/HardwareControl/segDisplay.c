@@ -7,8 +7,7 @@
 #include <linux/i2c-dev.h>
 #include <time.h>
 #include <string.h>
-#include "segDisplay.h"
-
+#include "../../Include/HardwareControlModule/segDisplay.h"
 
 #define I2CDRV_LINUX_BUS1 "/dev/i2c-1"
 

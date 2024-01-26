@@ -4,7 +4,7 @@ Supports only 8-bit unsigned and 16-bit signed PCM encoded samples
 #ifndef _WAVE_AUDIOPLAYER_H_
 #define _WAVE_AUDIOPLAYER_H_
 #ifndef DR_WAV_IMPLEMENTATION
-#include "dr_wav.h"
+#include "../AudioParcers/wav_parcer.h"
 #define DR_WAV_IMPLEMENTATION
 #endif
 /******************************************************

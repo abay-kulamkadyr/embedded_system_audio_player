@@ -2,8 +2,8 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "joystick.h"
-#include "../Utils/sleepMilliseconds.h"
+#include "../../Include/HardwareControlModule/joystick.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
 #define EXPORT_FILE             "/sys/class/gpio/export"
 #define MAX_PATH_SIZE           1024
 #define UP_LINUX_NUMBER         26

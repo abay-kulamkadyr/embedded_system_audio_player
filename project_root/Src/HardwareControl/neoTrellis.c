@@ -2,9 +2,10 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <stdio.h>
-#include "neoTrellis.h"
-#include "seeSaw.h"
-#include "../Utils/sleepMilliseconds.h"
+#include "../../Include/HardwareControlModule/neoTrellis.h"
+#include "../../Include/HardwareControlModule/seeSaw.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+
 #define min(a,b) \
    ({ __typeof__ (a) _a = (a); \
        __typeof__ (b) _b = (b); \

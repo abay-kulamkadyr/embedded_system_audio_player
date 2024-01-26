@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "potentiometer.h"
+#include "../../Include/HardwareControlModule/potentiometer.h"
 #define A2D_VOLTAGE0_DIR "/sys/bus/iio/devices/iio:device0/in_voltage0_raw"
 #define MAX_PATH_SIZE 1024
 

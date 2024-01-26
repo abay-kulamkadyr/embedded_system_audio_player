@@ -3,9 +3,9 @@
 #include <pthread.h>
 #include <stdbool.h>
 #include <alloca.h>
-#include "WaveAudioPlayer.h"
-#include "Utils/sleepMilliseconds.h"
-#include "joystickListener.h"
+#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+#include "../../Include/JoystickListener/joystickListener.h"
 
 #define MAX_FILEPATH_SIZE 	        1024
 #define DEFAULT_NUM_TRACKS		    30

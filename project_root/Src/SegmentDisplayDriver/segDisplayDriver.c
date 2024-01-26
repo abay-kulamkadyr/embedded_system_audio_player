@@ -1,10 +1,12 @@
-#include "segDisplayDriver.h"
-#include "HardwareControlModule/segDisplay.h"
-#include "Utils/sleepMilliseconds.h"
-#include "WaveAudioPlayer.h"
+
 #include <stdbool.h>
 #include <pthread.h>
 #include <stdio.h>
+#include "../../Include/SegmentDisplayDriver/segDisplayDriver.h"
+#include "../../Include/HardwareControlModule/segDisplay.h"
+#include "../../Include/Utils/sleepMilliseconds.h"
+#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
+
 static bool terminate;
 pthread_t segDisplay_pid;
 void * segDisplayListener_thread(void* arg);

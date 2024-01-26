@@ -8,19 +8,20 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <pthread.h>
-#include "launchPad.h"
-#include "WaveAudioPlayer.h"
-#include "Utils/sleepMilliseconds.h"
-#include "joystickListener.h"
-#include "accelerometerListener.h"
-#include "segDisplayDriver.h"
-
 #include <stdint.h>
 #include <stdlib.h>
-#include "dr_wav.h"
-#include "HardwareControlModule/neoTrellis.h"
-#include "shutdown.h"
-#include "volumeChanger.h"
+
+#include "../Include/LaunchPad/launchPad.h"
+#include "../Include/WavAudioPlayer/WaveAudioPlayer.h"
+#include "../Include/Utils/sleepMilliseconds.h"
+#include "../Include/JoystickListener/joystickListener.h"
+#include "../Include/AccelerometerListener/accelerometerListener.h"
+#include "../Include/SegmentDisplayDriver/segDisplayDriver.h"
+#include "../Include/AudioParcers/wav_parcer.h"
+#include "../Include/HardwareControlModule/neoTrellis.h"
+#include "../Include/Shutdown/shutdown.h"
+#include "../Include/VolumeChanger/volumeChanger.h"
+
 #define SOURCE_FILE1 "Playback_Wave_Files/209456_bigjoedrummer_hip-hop-kit-beats (online-audio-converter.com).wav"              
 #define SOURCE_FILE2 "Playback_Wave_Files/323250__scale75__hip-hop-beats-techno.wav"
 #define SOURCE_FILE3 "Playback_Wave_Files/510946_theoter_hip-hop-beat (online-audio-converter.com).wav"

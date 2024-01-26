@@ -6,7 +6,7 @@
 #include <sys/ioctl.h>
 #include <linux/i2c.h>
 #include <linux/i2c-dev.h>
-#include "accelerometer.h"
+#include "../../Include/HardwareControlModule/accelerometer.h"
 
 #define I2C_ACCELEROMETER_ADDRESS  0x1C
 
