@@ -1,14 +1,18 @@
-#ifndef _VOLUMECHANGER_H_
-#define _VOLUMECHANGER_H_
+
+#ifndef VOLUME_CHANGER_H
+#define VOLUME_CHANGER_H
+
 #define AUDIOMIXER_MAX_VOLUME 100
+
 /*
-	Starts up a thread which changes the volume according to the potentiometer's current value
-*/
+ * Starts a thread which changes the volume according to the potentiometer's value.
+ */
 void VolumeChanger_Init(void);
 
 /*
-	Terminates the volume changing thread and releases all the allocated resources
-*/
+ * Terminates the volume-changing thread and releases all resources.
+ */
 void VolumeChanger_Destroy(void);
 
 #endif
+

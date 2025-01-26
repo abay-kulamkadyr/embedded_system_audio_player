@@ -1,4 +1,7 @@
-#ifndef _UTILS_H_
-#define _UTILS_H_
+#ifndef SLEEP_MILLISECONDS_H
+#define SLEEP_MILLISECONDS_H
+
 void sleep_ms(unsigned int delayMs);
+
 #endif
+

@@ -1,14 +1,16 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../Include/AccelerometerListener/accelerometerListener.h"
-#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
-#include "../../Include/Utils/sleepMilliseconds.h"
-#include "../../Include/HardwareControlModule/accelerometer.h"
-#define X_DIRECTION_THREASHOLD  0.4
-#define Y_DIRECTION_THREASHOLD  0.4
-#define Z_DIRECTION_THREASHOLD  1.5
-#define ACCELEROMETER_SENSITIVITY 16384.0
+#include <stdbool.h>
+
+#include "../../include/accelerometer_listener/accelerometer_listener.h"
+#include "../../include/wave_audio_player/wave_audio_player.h"
+#include "../../include/utils/sleep_milliseconds.h"
+#include "../../include/drivers/accelerometer.h"
+
+#define X_DIRECTION_THRESHOLD  0.4f
+#define ACCELEROMETER_SENSITIVITY 16384.0f
+
 static bool terminate_signal;
 static pthread_t accelerometer_pid;
 static void *accelerationSamplingThread(void *arg);
@@ -17,47 +19,43 @@ void AccelerometerListener_Init(void)
 {
     Accelerometer_init();
     terminate_signal = false;
-    int err= pthread_create(&accelerometer_pid, NULL, accelerationSamplingThread,NULL);
-    if(err){
-        printf("Failed to create Zen Cape controller thread, terminating the programm...\n");
+    int err = pthread_create(&accelerometer_pid, NULL, accelerationSamplingThread, NULL);
+    if (err) {
+        printf("Failed to create accelerometer listener thread, terminating...\n");
         exit(-1);
     }
 }
 
 static void *accelerationSamplingThread(void *arg)
 {
-    pthread_setcancelstate(PTHREAD_CANCEL_DISABLE,NULL);
-    while(!terminate_signal)
-    {
+    pthread_setcancelstate(PTHREAD_CANCEL_DISABLE, NULL);
+    while (!terminate_signal) {
         sleep_ms(10);
-        float xDir_value= Accelerometer_getX_Value()/ACCELEROMETER_SENSITIVITY;
-        if(xDir_value > X_DIRECTION_THREASHOLD)
-        {
+        float xDir_value = Accelerometer_getX_Value() / ACCELEROMETER_SENSITIVITY;
+
+        // Tilt forward => next track
+        if (xDir_value > X_DIRECTION_THRESHOLD) {
             WaveAudioPlayer_SkipToNextTrack();
-       
-            printf("Y value: %f\t", xDir_value);
-         
-            //Wait until back to normal acceleration
-            
+            printf("Accelerometer x: %f -> Next Track\n", xDir_value);
             sleep_ms(100);
         }
-        if(xDir_value < -X_DIRECTION_THREASHOLD)
-        {
+        // Tilt backward => previous track
+        else if (xDir_value < -X_DIRECTION_THRESHOLD) {
             WaveAudioPlayer_ReturnToPreviousTrack();
-            printf("Y value: %f\t", xDir_value);
+            printf("Accelerometer x: %f -> Previous Track\n", xDir_value);
             sleep_ms(100);
         }
     }
-    pthread_setcancelstate(PTHREAD_CANCEL_ENABLE,NULL);
+    pthread_setcancelstate(PTHREAD_CANCEL_ENABLE, NULL);
     sleep_ms(1);
     return NULL;
-
 }
 
 void AccelerometerListener_Destroy(void)
 {
     terminate_signal = true;
     pthread_cancel(accelerometer_pid);
-    pthread_join(accelerometer_pid,NULL);
+    pthread_join(accelerometer_pid, NULL);
     Accelerometer_destroy();
 }
+

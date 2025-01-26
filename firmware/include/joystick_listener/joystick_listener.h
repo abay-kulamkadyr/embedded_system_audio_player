@@ -1,5 +1,8 @@
-#ifndef _JOYSTICK_LISTENER
-#define _JOYSTICK_LISTENER
+#ifndef JOYSTICK_LISTENER_H
+#define JOYSTICK_LISTENER_H
+
 void JoystickListener_init(void);
 void JoystickListener_destroy(void);
-#endif 
+
+#endif
+
