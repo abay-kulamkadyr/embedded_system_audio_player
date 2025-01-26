@@ -183,7 +183,7 @@ To fully utilize the Embedded Audio Player, ensure you have the following hardwa
 
     Clone the Repository:
 
-git clone https://github.com/yourusername/embedded-audio-player.git
+git clone https://github.com/abay-kulamkadyr/embedded_system_audio_player.git
 cd embedded-audio-player/firmware
 
 Build the Firmware:
