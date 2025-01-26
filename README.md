@@ -1,4 +1,4 @@
-# 🎵 Embedded Audio Player with Node.js Server 🎵
+ # 🎵 Embedded Audio Player with Node.js Server 🎵
 
 This repository showcases an **embedded audio player** running on the BeagleBone (Green/Black) platform. It supports real-time .wav file playback, volume control, track navigation, and on-the-fly sound mixing triggered by various inputs (joystick, accelerometer, NeoTrellis button matrix). Additionally, a **Node.js web server** provides a remote interface for track management and control.
 
@@ -284,4 +284,3 @@ Alternatively, you can use:
     Large File Support:
         Issue: Limited memory for large .wav files.
         Solution: Implement streaming from disk instead of loading entire files into memory.
-
