@@ -11,24 +11,24 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#include "../Include/LaunchPad/launchPad.h"
-#include "../Include/WavAudioPlayer/WaveAudioPlayer.h"
-#include "../Include/Utils/sleepMilliseconds.h"
-#include "../Include/JoystickListener/joystickListener.h"
-#include "../Include/AccelerometerListener/accelerometerListener.h"
-#include "../Include/SegmentDisplayDriver/segDisplayDriver.h"
-#include "../Include/AudioParcers/wav_parcer.h"
-#include "../Include/HardwareControlModule/neoTrellis.h"
-#include "../Include/Shutdown/shutdown.h"
-#include "../Include/VolumeChanger/volumeChanger.h"
+#include "../include/launch_pad/launch_pad.h"
+#include "../include/wave_audio_player/wave_audio_player.h"
+#include "../include/utils/sleep_milliseconds.h"
+#include "../include/joystick_listener/joystick_listener.h"
+#include "../include/accelerometer_listener/accelerometer_listener.h"
+#include "../include/segment_display_driver/segment_display_driver.h"
+#include "../include/audio_parsers/wav_parcer.h"
+#include "../include/drivers/neo_trellis.h"
+#include "../include/shutdown/shutdown.h"
+#include "../include/volume_changer/volume_changer.h"
 
-#define SOURCE_FILE1 "Playback_Wave_Files/209456_bigjoedrummer_hip-hop-kit-beats (online-audio-converter.com).wav"              
-#define SOURCE_FILE2 "Playback_Wave_Files/323250__scale75__hip-hop-beats-techno.wav"
-#define SOURCE_FILE3 "Playback_Wave_Files/510946_theoter_hip-hop-beat (online-audio-converter.com).wav"
-#define SOURCE_FILE4 "Playback_Wave_Files/bensound-anewbeginning.wav"
-#define SOURCE_FILE5 "Playback_Wave_Files/bensound-creativeminds.wav"
-#define SOURCE_FILE6 "Playback_Wave_Files/brilliant-life-30sec.wav"
-#define SOURCE_FILE7 "Playback_Wave_Files/CantinaBand60.wav"
+#define SOURCE_FILE1 "../../assets/music/209456_bigjoedrummer_hip-hop-kit-beats (online-audio-converter.com).wav"              
+#define SOURCE_FILE2 "../../assets/music/323250__scale75__hip-hop-beats-techno.wav"
+#define SOURCE_FILE3 "../../assets/music/510946_theoter_hip-hop-beat (online-audio-converter.com).wav"
+#define SOURCE_FILE4 "../../assets/music/bensound-anewbeginning.wav"
+#define SOURCE_FILE5 "../../assets/music/bensound-creativeminds.wav"
+#define SOURCE_FILE6 "../../assets/music/brilliant-life-30sec.wav"
+#define SOURCE_FILE7 "../../assets/music/CantinaBand60.wav"
 
 
 

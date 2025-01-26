@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../Include/Shutdown/shutdown.h"
+#include "../../include/shutdown/shutdown.h"
 
 static pthread_mutex_t* main_thread_mutex; 
 static pthread_cond_t* main_thread_condvar;

@@ -2,10 +2,10 @@
 #include <stdbool.h>
 #include <pthread.h>
 #include <stdio.h>
-#include "../../Include/SegmentDisplayDriver/segDisplayDriver.h"
-#include "../../Include/HardwareControlModule/segDisplay.h"
-#include "../../Include/Utils/sleepMilliseconds.h"
-#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
+#include "../../include/segment_display_driver/segment_display_driver.h"
+#include "../../include/drivers/segment_display.h"
+#include "../../include/utils/sleep_milliseconds.h"
+#include "../../include/wave_audio_player/wave_audio_player.h"
 
 static bool terminate;
 pthread_t segDisplay_pid;

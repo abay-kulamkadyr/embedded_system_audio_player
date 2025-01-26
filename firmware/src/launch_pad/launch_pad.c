@@ -1,11 +1,11 @@
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../../Include/LaunchPad/launchPad.h"
-#include "../../Include/WavAudioPlayer/WaveAudioPlayer.h"
-#include "../../Include/HardwareControlModule/neoTrellis.h"
-#include "../../Include/Utils/sleepMilliseconds.h"
-#include "../../Include/Shutdown/shutdown.h"
+#include "../../include/launch_pad/launch_pad.h"
+#include "../../include/wave_audio_player/wave_audio_player.h"
+#include "../../include/drivers/neo_trellis.h"
+#include "../../include/utils/sleep_milliseconds.h"
+#include "../../include/shutdown/shutdown.h"
 
 #define RED          (color)        {.red = 255,   .green = 0,     .blue = 0}
 #define NEON_YELLOW  (color)        {.red = 244,   .green = 231,   .blue = 34}
@@ -31,7 +31,7 @@ static bool terminate_signal;
 #define BUTTONS_NUM             16
 #define MAX_PATH_SIZE           1024
 #define AUDIO_FILES_NUM         15
-#define MIXING_AUDIO_FILES_PATH "../../Sound_Effects_Wave_Files/"
+#define MIXING_AUDIO_FILES_PATH "../../../assets/sound_effects"
 #define AUDIO_0                 "128_BouncyDrums_02_726.wav"
 #define AUDIO_1                 "128_D#m_DreamySub_01_726.wav"
 #define AUDIO_2                 "128_D#m_DreamySynth_01_726.wav"
@@ -47,6 +47,7 @@ static bool terminate_signal;
 #define AUDIO_12                 "100_F_CyberpunkUplifter_849.wav"
 #define AUDIO_13                 "140_A_DaisyPad_01_726.wav"
 #define AUDIO_14                 "Kick_014_726.wav"
+
 static char audio_filenames [AUDIO_FILES_NUM] [MAX_PATH_SIZE] = {
     {MIXING_AUDIO_FILES_PATH AUDIO_0},
     {MIXING_AUDIO_FILES_PATH AUDIO_1},
